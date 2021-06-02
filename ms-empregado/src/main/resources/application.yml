@@ -1,0 +1,12 @@
+## Porta ###
+server:
+ port: 8081
+
+## Nome da Aplicacao ##
+spring:  application:    name: ms-empregado
+
+## Config da url do cloud ##
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

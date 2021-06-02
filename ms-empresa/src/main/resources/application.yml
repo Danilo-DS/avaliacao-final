@@ -1,0 +1,14 @@
+## Porta ###
+server:
+ port: 8083
+
+## Nome da Aplicacao ##
+spring:
+  application:
+    name: ms-empresa
+
+## Config da url do cloud ##
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

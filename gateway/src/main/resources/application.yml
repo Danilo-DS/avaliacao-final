@@ -1,0 +1,40 @@
+## Porta ##
+server:  port: 8080
+
+## Nome da Aplicacao ##  
+spring:
+  application:
+    name: gateway
+
+## Config da url do cloud ##
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+## Define o tempo de esperar da response ##
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+
+## Define o tempo de conecxao e tempo de leitura ##
+riboon:
+  ConnectTimeout: 10000
+  ReadTimeout: 20000
+
+## Define as rotas ##
+zuul:
+  routes:
+    ms-empregado:
+      service-id: ms-empregado
+      path: /ms-empregado/**
+    ms-empresa:
+      service-id: ms-empresa
+      path: /ms-empresa/** 
+    ms-cliente:
+      service-id: ms-cliente
+      path: /ms-cliente/** 
